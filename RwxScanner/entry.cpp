@@ -139,7 +139,7 @@ VOID DriverUnload(DRIVER_OBJECT* DriverObject)
 {
 	UNREFERENCED_PARAMETER(DriverObject);
 
-	DbgPrintEx(DPFLTR_IHVDRIVER_ID, DPFLTR_ERROR_LEVEL, "Unload\n");
+	DbgPrintEx(0, 0, "Unload\n");
 }
 
 
