@@ -117,7 +117,7 @@ void GetEProcesses()
 	UINT64 process;
 	UINT64 entry;
 
-	UINT32 gActiveProcessLink = *(UINT32*)((UINT8*)PsGetProcessId + 3) + 8;
+	UINT32 g = *(UINT32*)((UINT8*)PsGetProcessId + 3) + 8;
 	process = (UINT64)PsInitialSystemProcess;
 
 	entry = process;
@@ -130,7 +130,7 @@ void GetEProcesses()
 			WalkPages(entry);
 		}
 	L0:
-		entry = *(UINT64*)(entry + gActiveProcessLink) - gActiveProcessLink;
+		entry = *(UINT64*)(entry + g) - g;
 	} while (entry != process);
 
 }
